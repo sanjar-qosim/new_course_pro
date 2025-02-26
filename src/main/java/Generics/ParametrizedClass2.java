@@ -36,6 +36,10 @@ class OtherPair <V1> {
     private V1 value1;
     private V1 value2;
 
+    public <V> V abc(V val) {
+        return val;
+    }
+
     public OtherPair(V1 value1, V1 value2) {
         this.value1 = value1;
         this.value2 = value2;
