@@ -13,7 +13,25 @@ public class Test {
         Employee employee2 = new Employee("Misha", 47);
 
         Team <Schoolar> schoolarTeam = new Team<>("Dragons");
+        Team <Student> studentTeam = new Team<>("Vpered");
+        Team <Employee> employeeTeam = new Team<>("Rabotyagi");
+
         schoolarTeam.addNewParticipant(schoolar1);
         schoolarTeam.addNewParticipant(schoolar2);
+
+        studentTeam.addNewParticipant(student1);
+        studentTeam.addNewParticipant(student2);
+
+        employeeTeam.addNewParticipant(employee1);
+        employeeTeam.addNewParticipant(employee2);
+
+
+        Team <Schoolar> schoolarTeam2 = new Team<>("Mudreci");
+        Schoolar schoolar3 = new Schoolar("Sergey", 12);
+        Schoolar schoolar4 = new Schoolar("Olya", 14);
+        schoolarTeam2.addNewParticipant(schoolar3);
+        schoolarTeam2.addNewParticipant(schoolar4);
+        schoolarTeam.playWith(schoolarTeam2);
+
     }
 }
