@@ -3,6 +3,7 @@ package Generics.OtherTasks;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class MinMax <T extends Comparable<T>> {
 
@@ -19,10 +20,16 @@ public class MinMax <T extends Comparable<T>> {
     }
 
     public T getMin(){
+        if (list.isEmpty()) {
+            throw new NoSuchElementException("The list is empty!");
+        }
         return Collections.min(list);
     }
 
     public T getMax(){
+        if (list.isEmpty()) {
+            throw new NoSuchElementException("The list is empty!");
+        }
         return Collections.max(list);
     }
 }
