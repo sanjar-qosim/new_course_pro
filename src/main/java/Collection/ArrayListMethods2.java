@@ -39,7 +39,7 @@ public class ArrayListMethods2 {
     }
 }
 
-class StudentForArray {
+class StudentForArray implements Comparable <StudentForArray> {
 
     private String name;
     private int age;
@@ -63,5 +63,10 @@ class StudentForArray {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public int compareTo(StudentForArray another) {
+        return this.age - another.age;
     }
 }
