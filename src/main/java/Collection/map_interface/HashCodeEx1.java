@@ -26,6 +26,20 @@ public class HashCodeEx1 {
 
         System.out.println(student2.hashCode());
         System.out.println(student4.hashCode());
+
+        Map<Integer, Student> map2 = new HashMap<>();
+        Student student10 = new Student("Anvar", "Madridov", 1);
+        Student student11 = new Student("Ulug'bek", "Izzatulaev", 3);
+        Student student12 = new Student("Sirojiddin", "Japparov", 2);
+        map2.put(1, student10);
+        map2.put(2, student11);
+        map2.put(3, student12);
+        System.out.println(map2);
+
+        for (Map.Entry<Student, Double> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+
     }
 }
 
