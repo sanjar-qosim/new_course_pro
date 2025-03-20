@@ -43,7 +43,7 @@ public class HashCodeEx1 {
     }
 }
 
-class Student {
+class Student implements Comparable <Student> {
     String name;
     String surname;
     int course;
@@ -74,5 +74,10 @@ class Student {
     @Override
     public int hashCode() {
         return Objects.hash(name, surname, course);
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return this.name.compareTo(o.name);
     }
 }
