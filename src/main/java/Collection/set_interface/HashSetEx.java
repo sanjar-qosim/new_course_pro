@@ -1,4 +1,4 @@
-package Collection.ser_interface;
+package Collection.set_interface;
 
 import java.util.HashSet;
 import java.util.Set;
