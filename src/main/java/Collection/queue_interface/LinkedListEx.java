@@ -16,5 +16,6 @@ public class LinkedListEx {
         System.out.println(queue);
         System.out.println(queue.remove());
         System.out.println(queue);
+        System.out.println(queue.remove());
     }
 }
