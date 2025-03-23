@@ -1,15 +1,20 @@
-package nested_classes.static_nested_class;
+package nested_classes.inner_class;
 
 public class Car {
 
     String color;
     int doorCount;
     Engine engine;
-    static int a;
 
-    public Car(String color, int doorCount, Engine engine) {
+
+    public Car(String color, int doorCount) {
         this.color = color;
         this.doorCount = doorCount;
+//        this.engine = this.new Engine(horsePower);
+
+    }
+
+    public void setEngine(Engine engine) {
         this.engine = engine;
     }
 
@@ -22,25 +27,12 @@ public class Car {
                 '}';
     }
 
-    void method(){
-        System.out.println(Engine.countOfObjects);
-        Engine e = new Engine(200);
-        System.out.println(e.horsePower);
-    }
-
-    interface I {}
-
-    public static class Engine {
+    public class Engine {
 
         int horsePower;
-        static int countOfObjects;
 
-        int a;
         public Engine(int horsePower) {
-            System.out.println(Car.a);
-            System.out.println(this.a);
             this.horsePower = horsePower;
-            countOfObjects++;
         }
 
         @Override
@@ -55,17 +47,15 @@ public class Car {
 class Test {
 
     public static void main(String[] args) {
-        Car.Engine engine = new Car.Engine(256);
+        Car car = new Car("Black", 4);
+        System.out.println(car);
+        Car.Engine engine = car.new Engine(150);
+        car.setEngine(engine);
         System.out.println(engine);
-
-        Car car = new Car("Red", 2, engine);
         System.out.println(car);
 
-    }
-}
+        Car.Engine engine3 = new Car("yellow", 4).new Engine(200);
 
-class X extends Car.Engine {
-    X() {
-        super(200);
+
     }
 }
