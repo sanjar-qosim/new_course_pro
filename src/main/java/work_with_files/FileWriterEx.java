@@ -13,20 +13,29 @@ public class FileWriterEx {
 
         String s = "Hello";
 
-        FileWriter writer = null;
+//        FileWriter writer = null;
 
-        try {
-//            writer = new FileWriter("C:\\Users\\skasimov\\Desktop\\new_course_pro-main\\src\\main\\java\\work_with_files\\test1.txt");
-            writer = new FileWriter("src\\main\\java\\work_with_files\\test2.txt");
-            for(int i = 0; i < rubai.length(); i ++) {
+//        try {
+////            writer = new FileWriter("C:\\Users\\skasimov\\Desktop\\new_course_pro-main\\src\\main\\java\\work_with_files\\test1.txt");
+//            writer = new FileWriter("src\\main\\java\\work_with_files\\test2.txt");
+//            for(int i = 0; i < rubai.length(); i ++) {
+//                writer.write(rubai.charAt(i));
+//            }
+////            writer.write(s);
+//            System.out.println("Done!");
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        } finally {
+//            writer.close();
+//        }
+
+        try (FileWriter writer = new FileWriter("src\\main\\java\\work_with_files\\test2.txt")) {
+            for(int i = 0; i < rubai.length(); i++) {
                 writer.write(rubai.charAt(i));
             }
-//            writer.write(s);
             System.out.println("Done!");
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } finally {
-            writer.close();
+            e.printStackTrace();
         }
     }
 }
