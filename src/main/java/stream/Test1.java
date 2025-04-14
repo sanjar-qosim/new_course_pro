@@ -1,7 +1,6 @@
 package stream;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Test1 {
@@ -22,5 +21,25 @@ public class Test1 {
                 collect(Collectors.toList());
 
         System.out.println(list2);
+
+        int [] array = {5, 9, 3, 8, 1};
+        System.out.println(Arrays.toString(array));
+        array = Arrays.stream(array).map(element -> {
+            if (element % 3 == 0) {
+                element = element / 3;
+            }
+            return element;
+        }).toArray();
+        System.out.println(Arrays.toString(array));
+
+        Set<String> set = new TreeSet<>();
+        set.add("privet");
+        set.add("kak dela?");
+        set.add("OK");
+        set.add("poka");
+        System.out.println(set);
+
+        Set <Integer> set2 = set.stream().map(element -> element.length()).collect(Collectors.toSet());
+        System.out.println(set2);
     }
 }
