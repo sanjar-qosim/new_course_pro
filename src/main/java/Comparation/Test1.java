@@ -12,7 +12,6 @@ public class Test1 {
         list.add("Pavel");
 
         System.out.println("Before sort: " + list);
-
         Collections.sort(list);
         System.out.println("After sort: " + list);
     }
