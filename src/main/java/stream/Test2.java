@@ -27,6 +27,9 @@ public class Test2 {
         ).collect(Collectors.toList());
 
         System.out.println(studentList);
+
+        System.out.println("--------");
+        System.out.println(studentList.stream().filter(element -> element.getSex() == 'm').collect(Collectors.toList()));
     }
 }
 
