@@ -3,6 +3,7 @@ package stream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Test2 {
 
@@ -30,6 +31,9 @@ public class Test2 {
 
         System.out.println("--------");
         System.out.println(studentList.stream().filter(element -> element.getSex() == 'm').collect(Collectors.toList()));
+
+        Stream<Student> myStream = Stream.of(st1, st2);
+        System.out.println(myStream);
     }
 }
 
