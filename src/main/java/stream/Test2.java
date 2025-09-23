@@ -21,6 +21,12 @@ public class Test2 {
         studentList.add(st4);
         studentList.add(st5);
 
+        studentList.stream()
+                        .map(element -> {
+                            element.setName(element.getName().toUpperCase());
+                        })
+                                .filter()
+
         System.out.println(studentList);
 
         studentList = studentList.stream().filter(
