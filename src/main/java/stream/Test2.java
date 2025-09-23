@@ -27,6 +27,7 @@ public class Test2 {
                         })
                                 .filter()
 
+
         System.out.println(studentList);
 
         studentList = studentList.stream().filter(
